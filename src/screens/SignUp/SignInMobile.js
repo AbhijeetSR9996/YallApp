@@ -1,0 +1,98 @@
+import React from 'react';
+import { View, Text, Image, TouchableOpacity, ImageBackground } from 'react-native';
+import { signupStyles } from './signupStyles';
+import { icons } from '../../../assets/icons/icons';
+import { height, width } from '../../services/helper';
+
+const SignInMobile = ({ navigation }) => {
+  return (
+    <View style={{
+      flex: 1,
+      alignItems: 'stretch',
+      justifyContent: 'center'
+    }}>
+      <ImageBackground
+        source={require('../../../assets/images/core/background-signup.png')}
+        resizeMode="stretch"
+        style={{
+          flex: 1,
+          justifyContent: 'center'
+        }}
+      >
+
+        <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'transparent', justifyContent: 'center' }}>
+          <Image
+            resizeMode="stretch"
+            source={require('../../../assets/images/logo.png')}
+            style={{
+              alignSelf: 'center',
+              display: 'flex',
+              top: '34%'
+            }}
+          />
+        </View>
+        <View style={{ flex: 1, alignItems: 'stretch', backgroundColor: 'transparent', flexDirection: 'column' }}>
+          <View style={{
+            flex: 0.7, alignItems: 'center', backgroundColor: 'transparent', alignItems: 'center',
+            justifyContent: 'center', flexDirection: 'column'
+          }}>
+            <Text style={[signupStyles.headline, { top: '0%' }]}>By clicking “Log in”, you agree with our Terms. Learn, how we process
+              your data in our privacy policy and cokkies policy.</Text>
+          </View>
+          <View style={{
+            flex: 2, alignItems: 'center', backgroundColor: 'transparent', alignItems: 'center',
+            justifyContent: 'flex-start'
+          }}>
+
+            <TouchableOpacity
+              style={{
+                top: '0%',
+                alignSelf: 'center',
+                width: width * 0.8,
+                height: height * 0.07,
+                borderWidth: 1,
+                right: '2%'
+              }}
+              onPress={() => { navigation.navigate('SignedInMobile') }}>
+              <View style={{
+                left: 10,
+                top: 8,
+                width: width * 0.8,
+                borderWidth: 1,
+                borderRightWidth: 0,
+                height: height * 0.07,
+                alignSelf: 'center',
+                backgroundColor: '#DCC7E1',
+                position: 'relative',
+              }}>
+                <Text style={{
+                  fontSize: 17,
+                  fontFamily: 'BakbakOne-Regular',
+                  color: '#000000',
+                  alignSelf: 'center',
+                  justifyContent: 'center',
+                  top: '30.3%',
+                  right: '9.5%',
+                  lineHeight: 25,
+                  letterSpacing: -0.017
+                }}>Sign In with Mobile Number</Text>
+                <View style={{
+                  width: width * 0.15,
+                  borderWidth: 1,
+                  height: '104%',
+                  alignSelf: 'flex-end',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: '#DCC7E1',
+                  position: 'absolute',
+                  marginVertical: -1,
+                }}>{icons.rightarrow}</View>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </ImageBackground>
+    </View>
+  );
+};
+export default SignInMobile;
